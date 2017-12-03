@@ -11,6 +11,7 @@ namespace pk3DS
 {
     public partial class ToolsUI : Form
     {
+        private static bool skipDecompression = false;
         public ToolsUI()
         {
             InitializeComponent();
@@ -110,11 +111,10 @@ namespace pk3DS
                 else if (first4.SequenceEqual(BitConverter.GetBytes(0x47415243))) // GARC
                 {
                     if (threads > 0) { WinFormsUtil.Alert("Please wait for all operations to finish first."); return; }
-                    bool SkipDecompression = ModifierKeys == Keys.Control;
                     new Thread(() =>
                     {
                         threads++;
-                        bool r = GarcUtil.garcUnpack(path, folderPath + "_g", SkipDecompression, pBar1);
+                        bool r = GarcUtil.garcUnpack(path, folderPath + "_g", skipDecompression, pBar1);
                         threads--;
                         if (r)
                             batchRenameExtension(newFolder);
@@ -306,6 +306,18 @@ namespace pk3DS
         {
             if (threads > 0 && DialogResult.Yes != WinFormsUtil.Prompt(MessageBoxButtons.YesNo, "Currently processing files.", "Abort?"))
                 e.Cancel = true;
+        }
+
+        private void fileDC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (fileDC.Checked)
+            {
+                skipDecompression = false;
+            }
+            if (!fileDC.Checked)
+            {
+                skipDecompression = true;
+            }
         }
     }
 }

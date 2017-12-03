@@ -41,6 +41,7 @@
             this.pBar1 = new System.Windows.Forms.ProgressBar();
             this.NUD_Padding = new System.Windows.Forms.NumericUpDown();
             this.L_Padding = new System.Windows.Forms.Label();
+            this.fileDC = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PB_BCLIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Padding)).BeginInit();
             this.SuspendLayout();
@@ -60,14 +61,14 @@
             this.L_DARCMini.AutoSize = true;
             this.L_DARCMini.Location = new System.Drawing.Point(9, 9);
             this.L_DARCMini.Name = "L_DARCMini";
-            this.L_DARCMini.Size = new System.Drawing.Size(294, 13);
+            this.L_DARCMini.Size = new System.Drawing.Size(145, 13);
             this.L_DARCMini.TabIndex = 1;
-            this.L_DARCMini.Text = "GARC, DARC && Mini Unpack (CTRL to Skip Decompression)";
+            this.L_DARCMini.Text = "GARC, DARC && Mini Unpack";
             // 
             // CHK_PNG
             // 
             this.CHK_PNG.AutoSize = true;
-            this.CHK_PNG.Location = new System.Drawing.Point(89, 209);
+            this.CHK_PNG.Location = new System.Drawing.Point(88, 255);
             this.CHK_PNG.Name = "CHK_PNG";
             this.CHK_PNG.Size = new System.Drawing.Size(97, 17);
             this.CHK_PNG.TabIndex = 2;
@@ -77,7 +78,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 210);
+            this.label1.Location = new System.Drawing.Point(9, 255);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 3;
@@ -112,7 +113,7 @@
             // 
             this.PB_BCLIM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PB_BCLIM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PB_BCLIM.Location = new System.Drawing.Point(12, 226);
+            this.PB_BCLIM.Location = new System.Drawing.Point(11, 274);
             this.PB_BCLIM.Name = "PB_BCLIM";
             this.PB_BCLIM.Size = new System.Drawing.Size(300, 124);
             this.PB_BCLIM.TabIndex = 1;
@@ -121,7 +122,7 @@
             // 
             // B_Reset
             // 
-            this.B_Reset.Location = new System.Drawing.Point(12, 184);
+            this.B_Reset.Location = new System.Drawing.Point(12, 229);
             this.B_Reset.Name = "B_Reset";
             this.B_Reset.Size = new System.Drawing.Size(80, 23);
             this.B_Reset.TabIndex = 9;
@@ -134,7 +135,7 @@
             this.CHK_Delete.AutoSize = true;
             this.CHK_Delete.Checked = true;
             this.CHK_Delete.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHK_Delete.Location = new System.Drawing.Point(12, 148);
+            this.CHK_Delete.Location = new System.Drawing.Point(12, 174);
             this.CHK_Delete.Name = "CHK_Delete";
             this.CHK_Delete.Size = new System.Drawing.Size(155, 17);
             this.CHK_Delete.TabIndex = 10;
@@ -153,7 +154,7 @@
             // NUD_Padding
             // 
             this.NUD_Padding.Hexadecimal = true;
-            this.NUD_Padding.Location = new System.Drawing.Point(118, 164);
+            this.NUD_Padding.Location = new System.Drawing.Point(118, 206);
             this.NUD_Padding.Maximum = new decimal(new int[] {
             65536,
             0,
@@ -170,19 +171,33 @@
             // 
             // L_Padding
             // 
-            this.L_Padding.Location = new System.Drawing.Point(12, 164);
+            this.L_Padding.Location = new System.Drawing.Point(12, 206);
             this.L_Padding.Name = "L_Padding";
             this.L_Padding.Size = new System.Drawing.Size(100, 20);
             this.L_Padding.TabIndex = 13;
             this.L_Padding.Text = "GARC Padding:";
             this.L_Padding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // fileDC
+            // 
+            this.fileDC.AutoSize = true;
+            this.fileDC.Checked = true;
+            this.fileDC.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.fileDC.Location = new System.Drawing.Point(12, 151);
+            this.fileDC.Name = "fileDC";
+            this.fileDC.Size = new System.Drawing.Size(85, 17);
+            this.fileDC.TabIndex = 16;
+            this.fileDC.Text = "Decompress";
+            this.fileDC.UseVisualStyleBackColor = true;
+            this.fileDC.CheckedChanged += new System.EventHandler(this.fileDC_CheckedChanged);
+            // 
             // ToolsUI
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 362);
+            this.ClientSize = new System.Drawing.Size(324, 410);
+            this.Controls.Add(this.fileDC);
             this.Controls.Add(this.L_Padding);
             this.Controls.Add(this.NUD_Padding);
             this.Controls.Add(this.pBar1);
@@ -224,5 +239,6 @@
         private System.Windows.Forms.ProgressBar pBar1;
         private System.Windows.Forms.NumericUpDown NUD_Padding;
         private System.Windows.Forms.Label L_Padding;
+        private System.Windows.Forms.CheckBox fileDC;
     }
 }
