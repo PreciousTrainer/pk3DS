@@ -65,9 +65,10 @@ namespace pk3DS
             "Thrifty Megamart 1 [Poké Balls]",
             "Thrifty Megamart 2 [Misc]",
             "Thrifty Megamart 3 [Strange Souvenir]",
-            "Unused 1",
-            "Unused 2",
-            "Unused 3",
+            "Route 3 [X Items]",
+            "Konikoni City [X Items]",
+            "Tapu Village [X Items]",
+            "Mount Lanakila [X Items]",
         };
         private readonly string[] locationsBP =
         {
@@ -84,7 +85,7 @@ namespace pk3DS
             "Big Wave Beach",
             "Heahea Beach",
             "Ula'ula Beach",
-            "Poni Beach",
+            "Battle Tree",
         };
         #endregion
 
